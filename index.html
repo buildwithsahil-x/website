@@ -1,12 +1,1323 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Build With Sahil</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahil Sachdeva - Portfolio</title>
+    <style>
+        :root {
+            --background-color: #030712;
+            --primary-text-color: #F9FAFB;
+            --secondary-text-color: #D1D5DB;
+            --accent-color: #4F46E5;
+            --accent-hover-color: #4338CA;
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+        }
+
+        /* Basic Reset & Body Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--background-color);
+            color: var(--primary-text-color);
+            line-height: 1.6;
+        }
+
+        /* Hero Section Styles */
+        .hero-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 90vh;
+            padding: 6rem 1.5rem;
+        }
+
+        .hero-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3rem;
+            max-width: 1200px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .hero-image-wrapper {
+            flex-shrink: 0;
+            order: 1; /* Image first on mobile */
+        }
+
+        .hero-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #1f2937;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .hero-content {
+            order: 2; /* Text second on mobile */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-name {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-text-color);
+            letter-spacing: -0.025em;
+        }
+
+        .hero-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 0.5rem;
+        }
+
+        .hero-statement {
+            font-size: 1.125rem;
+            color: var(--secondary-text-color);
+            max-width: 600px;
+            margin-top: 1.5rem;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--primary-text-color);
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 0.875rem 2rem;
+            border-radius: 0.5rem;
+            margin-top: 2.5rem;
+            transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+        }
+
+        .hero-cta:hover {
+            background-color: var(--accent-hover-color);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Styles for Desktop */
+        @media (min-width: 768px) {
+            .hero-section {
+                min-height: 100vh;
+                padding: 4rem 2rem;
+            }
+            .hero-container {
+                flex-direction: row-reverse; /* Image on the right */
+                justify-content: space-between;
+                text-align: left;
+                gap: 4rem;
+            }
+            .hero-image-wrapper {
+                order: 2;
+            }
+            .hero-photo {
+                width: 280px;
+                height: 280px;
+            }
+            .hero-content {
+                order: 1;
+                align-items: flex-start;
+            }
+            .hero-name {
+                font-size: 4rem;
+            }
+            .hero-title {
+                font-size: 1.5rem;
+            }
+            .hero-statement {
+                font-size: 1.25rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .hero-photo {
+                width: 320px;
+                height: 320px;
+            }
+            .hero-name {
+                font-size: 4.5rem;
+            }
+        }
+    </style>
 </head>
-<body style="display:flex;justify-content:center;align-items:center;height:100vh;font-family:Arial;">
-  <div style="text-align:center;">
-    <h1>Build With Sahil</h1>
-    <p>Cloud | DevOps | Automation | AI</p>
-  </div>
+<body>
+
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-image-wrapper">
+                <img src="https://storage.googleapis.com/pj-becfr-portfolio-assets/me.png" alt="Professional photo of Sahil Sachdeva" class="hero-photo">
+            </div>
+            <div class="hero-content">
+                <h1 class="hero-name">Sahil Sachdeva</h1>
+                <h2 class="hero-title">AI & Automation Architect | Cloud & Digital Transformation Specialist</h2>
+                <p class="hero-statement">
+                    I architect intelligent automation and scalable cloud solutions that power enterprise-wide digital transformation. My expertise lies in designing future-proof systems that optimize performance and deliver significant business impact.
+                </p>
+                <a href="mailto:sachdevasahil2222@gmail.com" class="hero-cta">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
 </body>
-</html>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Summary Section</title>
+    <style>
+        :root {
+            --text-primary: #1a1a1a;
+            --text-secondary: #555555;
+            --background-color: #ffffff;
+            --accent-color: #0a0a0a;
+        }
+
+        /* Basic Reset & Font Setup */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            background-color: var(--background-color);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Professional Summary Section Styles */
+        #professional-summary {
+            width: 100%;
+            padding: 6rem 0;
+            background-color: var(--background-color);
+        }
+
+        .summary-container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+        }
+
+        .summary-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 2rem;
+            padding-left: 3.5rem;
+        }
+
+        .summary-title::before {
+            content: '';
+            position: absolute;
+            left: 2rem;
+            top: 0.5rem; /* Vertically center with the text */
+            width: 2rem;
+            height: 2px;
+            background-color: var(--text-secondary);
+            opacity: 0.5;
+        }
+        
+        .summary-text {
+            font-size: 2.25rem;
+            font-weight: 300;
+            line-height: 1.4;
+            color: var(--text-secondary);
+            letter-spacing: -0.02em;
+        }
+
+        .summary-text strong {
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .summary-text {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #professional-summary {
+                padding: 4rem 0;
+            }
+            
+            .summary-container {
+                padding: 0 1.5rem;
+            }
+
+            .summary-title {
+                padding-left: 3rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .summary-title::before {
+                left: 1.5rem;
+            }
+
+            .summary-text {
+                font-size: 1.75rem;
+                line-height: 1.5;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .summary-text {
+                font-size: 1.5rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <section id="professional-summary">
+        <div class="summary-container">
+            <h2 class="summary-title">Synopsis</h2>
+            <p class="summary-text">
+                AI and Automation Architect with <strong>15 years of experience</strong> leading enterprise digital transformation initiatives across cloud, DevOps, and intelligent automation ecosystems. Specialized in designing <strong>LLM-powered applications, agentic AI systems, infrastructure automation,</strong> and <strong>API-driven enterprise integrations</strong>. Proven track record in architecting scalable cloud-native platforms on <strong>GCP, Azure, and AWS</strong>, enabling operational efficiency, governance, and business agility.
+            </p>
+        </div>
+    </section>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Expertise Section</title>
+    <style>
+        /* CSS Reset & Base Styles */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Using a system font stack for performance and native feel */
+        :root {
+            --font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            --color-background: #f8f9fa;
+            --color-card-background: #ffffff;
+            --color-text-primary: #212529;
+            --color-text-secondary: #495057;
+            --color-border: #dee2e6;
+            --color-accent: #6c757d;
+        }
+
+        /* Section Styling */
+        .expertise-section {
+            font-family: var(--font-family-sans);
+            background-color: var(--color-background);
+            padding: 5rem 0;
+            color: var(--color-text-primary);
+        }
+
+        .expertise-container {
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        .expertise-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 4rem;
+            letter-spacing: -0.5px;
+        }
+
+        /* Grid Layout for Expertise Cards */
+        .expertise-grid {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        /* Individual Expertise Card */
+        .expertise-card {
+            background-color: var(--color-card-background);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 2rem;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .expertise-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.07);
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--color-border);
+            color: var(--color-text-primary);
+        }
+
+        .skills-list {
+            list-style: none;
+        }
+
+        .skills-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.85rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--color-text-secondary);
+        }
+
+        .skills-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .skills-list li::before {
+            content: '›';
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-weight: 700;
+            font-size: 1.2rem;
+            line-height: 1.4;
+            color: var(--color-accent);
+        }
+
+        /* Responsive Breakpoints */
+        @media (min-width: 768px) {
+            .expertise-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .expertise-title {
+                font-size: 3rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .expertise-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="expertise-section">
+        <div class="expertise-container">
+            <h2 class="expertise-title">Core Competencies</h2>
+            <div class="expertise-grid">
+
+                <div class="expertise-card">
+                    <h3 class="card-title">AI Transformation</h3>
+                    <ul class="skills-list">
+                        <li>Enterprise LLM Architecture</li>
+                        <li>Agentic AI Systems</li>
+                        <li>Retrieval-Augmented Generation (RAG)</li>
+                        <li>LLM Model Orchestration</li>
+                        <li>AI Governance &amp; Deployment Strategies</li>
+                        <li>LangChain &amp; LangGraph Frameworks</li>
+                        <li>Self-Hosted &amp; Secure AI Implementations</li>
+                        <li>OpenAI &amp; Azure OpenAI SDK</li>
+                        <li>Vertex AI &amp; Google ADK</li>
+                        <li>Ollama &amp; HuggingFace Ecosystems</li>
+                        <li>n8n Workflow Orchestration</li>
+                    </ul>
+                </div>
+
+                <div class="expertise-card">
+                    <h3 class="card-title">Cloud Architecture</h3>
+                    <ul class="skills-list">
+                        <li>Google Cloud Platform (GCP)</li>
+                        <li>Microsoft Azure</li>
+                        <li>Amazon Web Services (AWS)</li>
+                        <li>Cloud-Native Architecture Design</li>
+                        <li>Serverless Architecture (Cloud Run, AWS Lambda, S3)</li>
+                        <li>Multi-Environment Infrastructure Strategy</li>
+                    </ul>
+                </div>
+
+                <div class="expertise-card">
+                    <h3 class="card-title">DevOps &amp; Platform Engineering</h3>
+                    <ul class="skills-list">
+                        <li>Infrastructure as Code (Terraform)</li>
+                        <li>Configuration Management (Red Hat Ansible)</li>
+                        <li>GitLab CI/CD Pipeline Architecture</li>
+                        <li>CI/CD Template Engineering</li>
+                        <li>Automated Environment Provisioning</li>
+                        <li>Cloud Resource Governance</li>
+                    </ul>
+                </div>
+
+                <div class="expertise-card">
+                    <h3 class="card-title">Enterprise Automation</h3>
+                    <ul class="skills-list">
+                        <li>Robotic Process Automation (Automation Anywhere A360, UiPath)</li>
+                        <li>Microsoft Power Automate</li>
+                        <li>Hybrid Automation (RPA + API Integrations)</li>
+                        <li>Enterprise Workflow Modernization</li>
+                        <li>Business Process Re-engineering</li>
+                    </ul>
+                </div>
+
+                <div class="expertise-card">
+                    <h3 class="card-title">Enterprise Integrations</h3>
+                    <ul class="skills-list">
+                        <li>REST API Architecture</li>
+                        <li>Microsoft Graph API</li>
+                        <li>ServiceNow Integration</li>
+                        <li>Azure AD &amp; Identity Governance</li>
+                        <li>Active Directory &amp; LDAP</li>
+                        <li>SAP &amp; Enterprise System Integration</li>
+                    </ul>
+                </div>
+                
+                <div class="expertise-card">
+                    <h3 class="card-title">Data &amp; Storage</h3>
+                    <ul class="skills-list">
+                        <li>PostgreSQL</li>
+                        <li>Redis</li>
+                        <li>AWS RDS</li>
+                        <li>ChromaDB</li>
+                        <li>FAISS Vector Stores</li>
+                    </ul>
+                </div>
+
+                <div class="expertise-card">
+                    <h3 class="card-title">Programming &amp; Scripting</h3>
+                    <ul class="skills-list">
+                        <li>Python</li>
+                        <li>PowerShell</li>
+                        <li>Shell Scripting</li>
+                        <li>VBScript</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core Competencies Section</title>
+    <style>
+        :root {
+            --color-background: #ffffff;
+            --color-text-primary: #111111;
+            --color-text-secondary: #555555;
+            --color-border: #eaeaea;
+            --color-shadow: rgba(0, 0, 0, 0.06);
+            --font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            --section-padding-y: 6rem;
+            --section-padding-x: 2rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .competencies-section {
+            font-family: var(--font-primary);
+            background-color: var(--color-background);
+            color: var(--color-text-primary);
+        }
+
+        .competencies-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--section-padding-y) var(--section-padding-x);
+        }
+
+        .competencies-heading {
+            text-align: center;
+            font-size: clamp(1.75rem, 5vw, 2.5rem);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 4rem;
+        }
+
+        .competencies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .competency-item {
+            background-color: var(--color-background);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .competency-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px -5px var(--color-shadow);
+        }
+
+        .competency-item h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            line-height: 1.5;
+            color: var(--color-text-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .competencies-container {
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+            }
+
+            .competencies-heading {
+                margin-bottom: 3rem;
+            }
+
+            .competencies-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 1rem;
+            }
+
+            .competency-item {
+                padding: 2rem 1.5rem;
+            }
+
+            .competency-item h3 {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .competencies-container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="competencies-section">
+        <div class="competencies-container">
+            <h2 class="competencies-heading">Core Competencies</h2>
+            <ul class="competencies-grid">
+                <li class="competency-item">
+                    <h3>Digital Transformation Strategy</h3>
+                </li>
+                <li class="competency-item">
+                    <h3>Enterprise Solution Architecture</h3>
+                </li>
+                <li class="competency-item">
+                    <h3>Cross-Functional Leadership</h3>
+                </li>
+                <li class="competency-item">
+                    <h3>Governance & Compliance Oversight</h3>
+                </li>
+                <li class="competency-item">
+                    <h3>Operational Excellence</h3>
+                </li>
+                <li class="competency-item">
+                    <h3>Mentorship & Capability Building</h3>
+                </li>
+            </ul>
+        </div>
+    </section>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certifications Section</title>
+    <style>
+        :root {
+            --color-background: #f8f9fa;
+            --color-surface: #ffffff;
+            --color-text-primary: #212529;
+            --color-text-secondary: #495057;
+            --color-border: #e9ecef;
+            --color-accent: #343a40;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.03);
+            --shadow-md: 0 5px 15px rgba(0,0,0,0.07);
+            --font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .certifications-section {
+            font-family: var(--font-family-sans);
+            background-color: var(--color-background);
+            padding: 6rem 0;
+            line-height: 1.6;
+        }
+
+        .certifications-section .container {
+            max-width: 1140px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .certifications-section .section-title {
+            font-size: 2.75rem;
+            font-weight: 700;
+            color: var(--color-text-primary);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .certifications-section .section-subtitle {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--color-text-secondary);
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .certifications-section .certifications-grid {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .certifications-section .cert-item {
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 120px;
+        }
+
+        .certifications-section .cert-item:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .certifications-section .cert-name {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--color-text-primary);
+        }
+
+        @media (max-width: 992px) {
+            .certifications-section {
+                padding: 5rem 0;
+            }
+            .certifications-section .section-title {
+                font-size: 2.25rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .certifications-section {
+                padding: 4rem 0;
+            }
+            .certifications-section .section-title {
+                font-size: 2rem;
+            }
+            .certifications-section .section-subtitle {
+                margin-bottom: 3rem;
+            }
+            .certifications-section .certifications-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .certifications-section .cert-item {
+                min-height: auto;
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="certifications-section">
+        <div class="container">
+            <h2 class="section-title">Certifications & Accreditations</h2>
+            <p class="section-subtitle">A commitment to continuous learning and mastery in key technology domains.</p>
+            <ul class="certifications-grid">
+                <li class="cert-item">
+                    <span class="cert-name">Google Cloud Associate Engineer</span>
+                </li>
+                <li class="cert-item">
+                    <span class="cert-name">Microsoft Azure AZ-900</span>
+                </li>
+                <li class="cert-item">
+                    <span class="cert-name">Red Hat Specialist in Ansible Automation</span>
+                </li>
+                <li class="cert-item">
+                    <span class="cert-name">Microsoft Power Automate PL-900</span>
+                </li>
+                <li class="cert-item">
+                    <span class="cert-name">Automation Anywhere A360 Master & Advanced</span>
+                </li>
+                <li class="cert-item">
+                    <span class="cert-name">UiPath RPA Certification</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Experience Section</title>
+    <style>
+        :root {
+            --color-background: #FFFFFF;
+            --color-text-primary: #111827;
+            --color-text-secondary: #4B5563;
+            --color-accent: #0d5c63;
+            --color-border: #E5E7EB;
+            --font-family-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        /* Basic Reset & Typography */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family-sans);
+            background-color: var(--color-background);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+        }
+
+        /* Experience Section Wrapper */
+        .experience-section {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 2rem;
+        }
+
+        .experience-section-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--color-text-primary);
+            margin-bottom: 3rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        /* Individual Experience Item */
+        .experience-item {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 2px solid var(--color-border);
+        }
+
+        .experience-item:not(:last-child) {
+            padding-bottom: 3rem;
+        }
+        
+        /* Dot on the timeline */
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -7px; /* (12px width / 2) + 1px border */
+            top: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--color-accent);
+            border: 2px solid var(--color-background);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .experience-role {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--color-text-primary);
+        }
+
+        .experience-organization {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--color-text-secondary);
+        }
+
+        .experience-meta {
+            text-align: right;
+            flex-shrink: 0;
+            color: var(--color-text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .experience-duration {
+            font-weight: 500;
+        }
+
+        .key-contributions {
+            list-style: none;
+        }
+
+        .key-contributions li {
+            position: relative;
+            padding-left: 1.5rem;
+            font-size: 1rem;
+            color: var(--color-text-secondary);
+        }
+
+        .key-contributions li:not(:last-child) {
+            margin-bottom: 0.75rem;
+        }
+        
+        /* Custom bullet point */
+        .key-contributions li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            top: -1px;
+            color: var(--color-accent);
+            font-weight: 600;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .experience-section {
+                padding: 1rem;
+                margin: 2rem auto;
+            }
+
+            .experience-section-title {
+                font-size: 1.75rem;
+                margin-bottom: 2rem;
+            }
+
+            .experience-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.25rem;
+                margin-bottom: 1rem;
+            }
+
+            .experience-meta {
+                text-align: left;
+            }
+
+            .experience-item {
+                padding-left: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="experience-section">
+        <h2 class="experience-section-title">Professional Experience</h2>
+        <div class="experience-list">
+
+            <article class="experience-item">
+                <div class="experience-header">
+                    <div class="experience-title">
+                        <h3 class="experience-role">Automation & AI Architect</h3>
+                        <p class="experience-organization">RSS - Carrefour</p>
+                    </div>
+                    <div class="experience-meta">
+                        <p class="experience-duration">07/2023 - 12/2025</p>
+                        <p class="experience-location">Belgium</p>
+                    </div>
+                </div>
+                <ul class="key-contributions">
+                    <li>Architected and deployed secure LLM-powered enterprise applications using LangChain, HuggingFace, and RAG frameworks for confidential document intelligence.</li>
+                    <li>Designed self-hosted AI knowledge systems leveraging Ollama, ChromaDB, and GGUF models (LLaMA 3, Mistral) enabling offline AI capabilities.</li>
+                    <li>Engineered GitLab CI/CD-driven cloud infrastructure pipelines for automated GCP provisioning.</li>
+                    <li>Developed modular Terraform architecture supporting multi-environment deployments.</li>
+                    <li>Integrated Terraform and Ansible to automate full infrastructure lifecycle management.</li>
+                    <li>Delivered custom Python-based automation frameworks for enterprise system integration.</li>
+                </ul>
+            </article>
+
+            <article class="experience-item">
+                <div class="experience-header">
+                    <div class="experience-title">
+                        <h3 class="experience-role">Automation Consultant</h3>
+                        <p class="experience-organization">Tata Consultancy Services</p>
+                    </div>
+                    <div class="experience-meta">
+                        <p class="experience-duration">06/2022 - 07/2023</p>
+                        <p class="experience-location">India</p>
+                    </div>
+                </div>
+                <ul class="key-contributions">
+                    <li>Led enterprise RPA transformation initiatives using Power Automate and Automation Anywhere.</li>
+                    <li>Architected Microsoft 365 and Azure AD automation solutions via Microsoft Graph APIs.</li>
+                    <li>Conducted automation opportunity assessments aligned with ROI-driven digital transformation roadmaps.</li>
+                </ul>
+            </article>
+
+            <article class="experience-item">
+                <div class="experience-header">
+                    <div class="experience-title">
+                        <h3 class="experience-role">Automation Technical Lead & Solution Architect</h3>
+                        <p class="experience-organization">IBM India Private Limited</p>
+                    </div>
+                    <div class="experience-meta">
+                        <p class="experience-duration">09/2010 - 05/2022</p>
+                        <p class="experience-location">India</p>
+                    </div>
+                </div>
+                <ul class="key-contributions">
+                    <li>Designed enterprise automation platforms combining Ansible-based infrastructure automation with RPA-driven service orchestration.</li>
+                    <li>Architected Azure-based DevOps transformation programs leveraging Terraform, Ansible, and CI/CD pipelines.</li>
+                    <li>Built IAM automation systems for onboarding, offboarding, and compliance workflows.</li>
+                    <li>Directed security and audit governance initiatives including SOC1, SOX, and SSAE16 compliance.</li>
+                    <li>Developed enterprise dashboards for operational intelligence and audit transparency.</li>
+                    <li>Mentored and led cross-functional automation teams driving platform standardization.</li>
+                </ul>
+            </article>
+
+        </div>
+    </section>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Achievements Section</title>
+    <style>
+        :root {
+            --color-background: #ffffff;
+            --color-text-primary: #343a40;
+            --color-text-secondary: #495057;
+            --color-accent: #005ce6;
+            --font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        /* Basic Reset & Font Smoothing */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background-color: var(--color-background);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Achievements Section Styling */
+        .achievements-section {
+            background-color: var(--color-background);
+            padding: 5rem 1.5rem;
+        }
+
+        .achievements-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .achievements-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--color-text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        /* Underline effect for the title */
+        .achievements-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: var(--color-accent);
+        }
+
+        .achievements-list {
+            list-style: none;
+            text-align: left;
+        }
+
+        .achievement-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+        }
+
+        .achievement-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .achievement-icon {
+            flex-shrink: 0;
+            margin-right: 1.5rem;
+            margin-top: 0.1rem;
+            width: 24px;
+            height: 24px;
+            color: var(--color-accent);
+        }
+
+        .achievement-text {
+            font-size: 1.125rem;
+            line-height: 1.6;
+            color: var(--color-text-primary);
+            font-weight: 400;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .achievements-section {
+                padding: 4rem 1rem;
+            }
+
+            .achievements-title {
+                font-size: 1.1rem;
+                margin-bottom: 2.5rem;
+            }
+
+            .achievement-text {
+                font-size: 1rem;
+            }
+            
+            .achievement-icon {
+                margin-right: 1rem;
+                width: 22px;
+                height: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="achievements-section">
+        <div class="achievements-container">
+            <h2 class="achievements-title">Career Highlights</h2>
+            <ul class="achievements-list">
+                <li class="achievement-item">
+                    <div class="achievement-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <span class="achievement-text">IBM STAR Award (awarded twice for performance excellence)</span>
+                </li>
+                <li class="achievement-item">
+                    <div class="achievement-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <span class="achievement-text">Enterprise-wide reusable automation modules adopted across multiple teams</span>
+                </li>
+                <li class="achievement-item">
+                    <div class="achievement-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <span class="achievement-text">Developed low-code Python automation platforms for business workflow optimization</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+</body>
+</html><style>
+  :root {
+    --text-primary: #1d1d1f;
+    --text-secondary: #5a6470;
+    --bg-primary: #ffffff;
+    --border-light: #e8e8e8;
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 3rem;
+    --spacing-xl: 5rem;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .edu-section-wrapper {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.5;
+  }
+
+  .edu-section {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .edu-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+  }
+
+  .edu-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-primary);
+    position: relative;
+    padding-bottom: var(--spacing-sm);
+  }
+  
+  .edu-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--text-primary);
+  }
+
+  .edu-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  .edu-item {
+    display: flex;
+    gap: var(--spacing-md);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px solid var(--border-light);
+  }
+  
+  .edu-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .edu-year {
+    flex: 0 0 80px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    padding-top: 0.25rem;
+  }
+
+  .edu-details {
+    flex: 1;
+  }
+
+  .edu-degree {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-primary);
+  }
+
+  .edu-institution {
+    font-size: 1rem;
+    color: var(--text-secondary);
+  }
+
+  @media (max-width: 768px) {
+    .edu-section {
+      padding: var(--spacing-lg) 0;
+    }
+    .edu-title {
+      font-size: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .edu-item {
+      flex-direction: column;
+      gap: var(--spacing-xs);
+      padding-bottom: var(--spacing-md);
+    }
+    .edu-year {
+      flex-basis: auto;
+      padding-top: 0;
+      margin-bottom: var(--spacing-xs);
+    }
+    .edu-degree {
+      font-size: 1.15rem;
+    }
+  }
+</style>
+<div class="edu-section-wrapper">
+  <section class="edu-section" id="education">
+    <div class="edu-container">
+      <h2 class="edu-title">Education</h2>
+      <div class="edu-list">
+        <article class="edu-item">
+          <div class="edu-year">2014</div>
+          <div class="edu-details">
+            <h3 class="edu-degree">Post Graduate Diploma in Business Management (IT Systems)</h3>
+            <p class="edu-institution">Institute of Management and Technology, India</p>
+          </div>
+        </article>
+        <article class="edu-item">
+          <div class="edu-year">2010</div>
+          <div class="edu-details">
+            <h3 class="edu-degree">Bachelor of Business Administration</h3>
+            <p class="edu-institution">IP University, India</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</div>
