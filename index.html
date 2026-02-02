@@ -141,6 +141,10 @@
             text-align: center;
             position: relative;
         }
+
+        .hero-image-wrapper {
+            flex-shrink: 0;
+        }
         
         .hero::before {
             content: '';
@@ -345,6 +349,12 @@
             font-size: 1.2rem;
             color: rgba(240, 240, 245, 0.6);
         }
+
+        .section-header .btn {
+            display: inline-block; /* or block if you want full width */
+            margin-top: 1rem;      /* pushes it below subtitle */
+        }
+
         
         .battle-cards {
             display: grid;
@@ -444,6 +454,8 @@
         .battle-actions {
             display: flex;
             gap: var(--space-sm);
+            position: relative;
+            z-index: 10;
         }
         
         .btn {
@@ -458,6 +470,8 @@
             cursor: pointer;
             border: none;
             font-size: 0.95rem;
+            position: relative;  /* Add this line */
+            z-index: 10;         /* Add this line */
         }
         
         .btn-primary {
@@ -789,10 +803,11 @@
     </style>
 </head>
 <body>
-    <div class="bg-grid"></div>
-    
+    <div class="bg-grid"></div>   
     <header>
         <div class="container">
+
+            
             <div class="header-content">
                 <div class="logo">BUILDWITHSAHIL</div>
                 <div class="proof-badge">Real Experience</div>
@@ -804,6 +819,11 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="container">
+                <img src="https://storage.googleapis.com/pj-becfr-portfolio-assets/unnamed.png" 
+                    alt="Sahil Sachdeva - Professional Photo" 
+                    class="hero-image" 
+                    style="width:160px; height:160px; border-radius:50%; object-fit:cover; margin-bottom:24px; border:3px solid #00ffff;">
+
                 <h1>AI CAGE MATCH</h1>
                 <p class="hero-subtitle">Watch AI Models Battle to Design My Brand</p>
                 <p class="hero-description">Same prompt. Different AI. You decide the winner. Every design is built on my REAL experience, projects, and skills.</p>
@@ -866,8 +886,8 @@
                             <span>Based on real projects & experience</span>
                         </div>
                         <div class="battle-actions">
-                            <a href="/gemini-round1" class="btn btn-primary">View Design</a>
-                            <a href="https://linkedin.com/in/sahilx" target="_blank" class="btn btn-secondary">Vote on LinkedIn</a>
+                            <a href="/gemini-round1/" class="btn btn-primary">View Design</a>
+                            <a href="https://linkedin.com/in/buildwithsahilx" target="_blank" class="btn btn-secondary">Vote on LinkedIn</a>
                         </div>
                     </div>
                     
@@ -876,7 +896,7 @@
                         <span class="round-badge">ROUND 1: BLIND BATTLE</span>
                         <h3 class="battle-title">Fighter 2 Enters</h3>
                         <div class="fighters">
-                            <span class="fighter-tag">Claude Sonnet 4.5</span>
+                            <span class="fighter-tag">Claude Opus 4.5</span>
                         </div>
                         <p class="battle-status">
                             Claude is stepping into the ring. Same prompt as Gemini. Same real data. Different interpretation. Watch the battle unfold.
@@ -886,8 +906,8 @@
                             <span>Based on real projects & experience</span>
                         </div>
                         <div class="battle-actions">
-                            <a href="/claude-round1" class="btn btn-primary">Coming Soon</a>
-                            <a href="https://linkedin.com/in/sahilx" target="_blank" class="btn btn-secondary">Stay Tuned</a>
+                            <a href="/claude-round1/" class="btn btn-primary">Coming Soon</a>
+                            <a href="https://linkedin.com/in/buildwithsahilx" target="_blank" class="btn btn-secondary">Stay Tuned</a>
                         </div>
                     </div>
                 </div>
@@ -925,76 +945,90 @@
         <section class="projects-section">
             <div class="container">
                 <div class="section-header">
-                    <h2>THE REAL WORK</h2>
-                    <p class="subtitle">Projects Behind the AI Designs</p>
+                    <h2>THE REAL WORK - BEHIND THE SCENES</h2>
+                    <p class="subtitle">AI-Powered Website Generation System</p>
                 </div>
                 
                 <div class="project-grid">
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h3 class="project-name">E-Commerce Platform</h3>
-                            <p class="project-company">TechCorp Inc.</p>
-                        </div>
-                        <div class="project-detail">
-                            <div class="project-label">Problem Solved</div>
-                            <div class="project-value">Built scalable microservices architecture handling 100K+ daily transactions</div>
-                        </div>
-                        <div class="project-detail">
-                            <div class="project-label">Outcome</div>
-                            <div class="project-value">40% reduction in page load time, 25% increase in conversion rate</div>
-                        </div>
-                        <div class="tech-stack">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">AWS</span>
-                            <span class="tech-tag">MongoDB</span>
-                        </div>
-                    </div>
                     
                     <div class="project-card">
                         <div class="project-header">
-                            <h3 class="project-name">AI Analytics Dashboard</h3>
-                            <p class="project-company">DataFlow Solutions</p>
+                            <h3 class="project-name">Structured Profile → Smart Website</h3>
+                            <p class="project-company">AI Automation System</p>
                         </div>
                         <div class="project-detail">
                             <div class="project-label">Problem Solved</div>
-                            <div class="project-value">Real-time data visualization for ML model performance monitoring</div>
+                            <div class="project-value">
+                                Turning raw profile data (JSON) into a clean, professional portfolio website without manually designing each section.
+                            </div>
                         </div>
                         <div class="project-detail">
                             <div class="project-label">Outcome</div>
-                            <div class="project-value">Reduced model debugging time by 60%, saved 20hrs/week for data science team</div>
+                            <div class="project-value">
+                                Automatically generates complete website sections like Hero, Experience, Education, and Certifications — structured, styled, and ready to publish.
+                            </div>
                         </div>
                         <div class="tech-stack">
                             <span class="tech-tag">Python</span>
-                            <span class="tech-tag">D3.js</span>
-                            <span class="tech-tag">FastAPI</span>
-                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">JSON</span>
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">Internal CSS</span>
                         </div>
                     </div>
                     
                     <div class="project-card">
                         <div class="project-header">
-                            <h3 class="project-name">Mobile App Refactor</h3>
-                            <p class="project-company">Startup Ventures</p>
+                            <h3 class="project-name">Section-by-Section AI Content Engine</h3>
+                            <p class="project-company">Vertex AI</p>
                         </div>
                         <div class="project-detail">
                             <div class="project-label">Problem Solved</div>
-                            <div class="project-value">Modernized legacy codebase, improved performance and maintainability</div>
+                            <div class="project-value">
+                                Preventing AI from inventing fake achievements or random content while generating professional portfolio sections.
+                            </div>
                         </div>
                         <div class="project-detail">
                             <div class="project-label">Outcome</div>
-                            <div class="project-value">App rating increased from 3.2 to 4.7 stars, 80% faster feature deployment</div>
+                            <div class="project-value">
+                                Each section is generated independently with strict rules: use only provided data, no hallucinations, executive tone, clean UI, fully responsive design.
+                            </div>
                         </div>
                         <div class="tech-stack">
-                            <span class="tech-tag">React Native</span>
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">GraphQL</span>
-                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Vertex AI</span>
+                            <span class="tech-tag">Prompt Engineering</span>
+                            <span class="tech-tag">Automation</span>
                         </div>
                     </div>
+                    
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-name">Automated Website Assembly & Metadata Tracking</h3>
+                            <p class="project-company">Portfolio Generation Pipeline</p>
+                        </div>
+                        <div class="project-detail">
+                            <div class="project-label">Problem Solved</div>
+                            <div class="project-value">
+                                Manually combining multiple generated sections and keeping track of generation details like model, time, and configuration.
+                            </div>
+                        </div>
+                        <div class="project-detail">
+                            <div class="project-label">Outcome</div>
+                            <div class="project-value">
+                                Automatically compiles all sections into one final HTML file and stores metadata such as model used, token limits, generation time, and output size.
+                            </div>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">File Handling</span>
+                            <span class="tech-tag">Automation Workflow</span>
+                            <span class="tech-tag">AI Orchestration</span>
+                        </div>
+                    </div>
+        
                 </div>
             </div>
         </section>
+        
         
         <!-- Leaderboard -->
         <section class="leaderboard-section">
@@ -1012,7 +1046,7 @@
                     </div>
                     <div class="leaderboard-item coming-soon">
                         <span class="rank">#2</span>
-                        <span class="model-name">Claude Sonnet 4.5</span>
+                        <span class="model-name">Claude Opus 4.5</span>
                         <span class="score">ENTERING SOON</span>
                     </div>
                     <div class="leaderboard-item coming-soon">
@@ -1028,35 +1062,9 @@
         <section class="founder-cta">
             <div class="container">
                 <div class="section-header">
-                    <h2>FOR FOUNDERS & HIRING MANAGERS</h2>
-                    <p class="subtitle">See how different AI models present the same technical expertise</p>
-                </div>
-                
-                <div class="founder-grid">
-                    <div class="founder-col">
-                        <h3>The Experiment</h3>
-                        <ul>
-                            <li>Watch AI interpret real technical experience 3+ different ways</li>
-                            <li>See how different models position identical skills</li>
-                            <li>Learn what works for your own brand positioning</li>
-                            <li>Understand AI's strengths in presenting technical talent</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="founder-col">
-                        <h3>The Reality</h3>
-                        <ul>
-                            <li>Full-stack developer with 5+ years shipping production code</li>
-                            <li>Built scalable systems handling 100K+ users</li>
-                            <li>Led technical teams and mentored junior developers</li>
-                            <li>Specialized in React, Node.js, Python, cloud architecture</li>
-                        </ul>
-                        
-                        <div class="cta-buttons">
-                            <a href="mailto:sahil@buildwithsahilx.com" class="btn btn-primary">Let's Talk</a>
-                            <a href="/resume.pdf" class="btn btn-secondary">Download Resume</a>
-                        </div>
-                    </div>
+                    <h2>FOR FOUNDERS</h2>
+                    <p class="subtitle">Let’s connect to explore how technology can accelerate your vision. I specialize in building intelligent automation, cloud platforms, and AI-driven solutions that transform ideas into measurable impact. Whether you’re looking to innovate, scale, or optimize, together we can turn complex challenges into actionable results.</p>
+                    <a href="mailto:buildwithsahilx@gmail.com" class="btn btn-primary">Let's Talk</a>
                 </div>
             </div>
         </section>
@@ -1069,10 +1077,8 @@
                 <div class="footer-section">
                     <h4>For Community</h4>
                     <ul class="footer-links">
-                        <li><a href="https://linkedin.com/in/sahilx" target="_blank">Follow on LinkedIn for Round 2</a></li>
+                        <li><a href="https://linkedin.com/in/buildwithsahilx" target="_blank">Follow on LinkedIn</a></li>
                         <li><a href="#arena">Vote on Current Battles</a></li>
-                        <li><a href="/prompts">See the Exact Prompts Used</a></li>
-                        <li><a href="/methodology">How Winners Are Chosen</a></li>
                     </ul>
                 </div>
                 
@@ -1080,17 +1086,15 @@
                     <h4>For Founders</h4>
                     <ul class="footer-links">
                         <li><a href="mailto:sahil@buildwithsahilx.com">Schedule a Call</a></li>
-                        <li><a href="/resume.pdf">Download Full Resume</a></li>
-                        <li><a href="https://github.com/sahilx" target="_blank">View GitHub Portfolio</a></li>
-                        <li><a href="https://linkedin.com/in/sahilx" target="_blank">Connect on LinkedIn</a></li>
+                        <li><a href="https://linkedin.com/in/buildwithsahilx" target="_blank">Connect on LinkedIn</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="social-links">
-                <a href="https://linkedin.com/in/sahilx" target="_blank" class="social-link">in</a>
-                <a href="https://github.com/sahilx" target="_blank" class="social-link">gh</a>
-                <a href="https://twitter.com/sahilx" target="_blank" class="social-link">𝕏</a>
+                <a href="https://linkedin.com/in/buildwithsahilx" target="_blank" class="social-link">in</a>
+                <a href="https://linkedin.com/in/buildwithsahilx" target="_blank" class="social-link">gh</a>
+                <a href="https://linkedin.com/in/buildwithsahilx" target="_blank" class="social-link">𝕏</a>
             </div>
             
             <div class="footer-bottom">
