@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dropping Soon - Build With Sahil</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --neon-cyan: #00ffff;
+        --neon-magenta: #ff00ff;
+        --deep-black: #0a0a0f;
+        --off-white: #f0f0f5;
+        --glow-cyan: 0 0 20px rgba(0, 255, 255, 0.7);
+        --font-display: 'Orbitron', sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+        font-family: var(--font-display);
+        background: var(--deep-black);
+        color: var(--off-white);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .message {
+        font-size: clamp(2rem, 5vw, 4rem);
+        background: linear-gradient(135deg, var(--neon-cyan), var(--neon-magenta));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: var(--glow-cyan);
+        animation: pulse 2s infinite;
+        margin-bottom: 2rem;
+    }
+
+    @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.8; }
+    }
+
+    .back-button {
+        font-family: var(--font-display);
+        font-size: 1.2rem;
+        padding: 0.8rem 2rem;
+        border: 2px solid var(--neon-cyan);
+        border-radius: 50px;
+        background: transparent;
+        color: var(--off-white);
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .back-button:hover {
+        background: var(--neon-cyan);
+        color: var(--deep-black);
+        box-shadow: var(--glow-cyan);
+        transform: translateY(-3px);
+    }
+
+</style>
+</head>
+<body>
+    <div class="message">
+        Countdown to Chaos: 03 February 2026 — Don’t Blink!<br>
+        <span style="display:block; 
+                     margin-top:1rem; 
+                     font-size:1.5em; 
+                     color:#ff7300; 
+                     text-shadow: 0 0 5px #ff7300, 0 0 10px #ff7300;">
+            Claude Opus 4.5 Enters the Arena
+        </span>
+    </div>
+    <a href="https://buildwithsahilx.com" class="back-button">Go Back</a>
+</body>
+
+
+
+</html>
