@@ -1,88 +1,2207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dropping Soon - Build With Sahil</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
-<style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahil Sachdeva - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1a1a2e;
+            background-color: #ffffff;
+        }
+
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 24px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-container {
+            max-width: 1100px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 80px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-image-wrapper {
+            flex-shrink: 0;
+        }
+
+        .hero-image {
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid #ffffff;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(37, 99, 235, 0.1);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .hero-image:hover {
+            transform: scale(1.03);
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(37, 99, 235, 0.15);
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-name {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #0f172a;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+            line-height: 1.1;
+        }
+
+        .hero-title {
+            font-size: 1.35rem;
+            font-weight: 500;
+            color: #2563eb;
+            margin-bottom: 24px;
+            letter-spacing: 0.01em;
+        }
+
+        .hero-statement {
+            font-size: 1.15rem;
+            color: #475569;
+            line-height: 1.8;
+            margin-bottom: 36px;
+            max-width: 540px;
+        }
+
+        .hero-location {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            color: #64748b;
+            margin-bottom: 32px;
+        }
+
+        .hero-location::before {
+            content: '📍';
+            font-size: 1rem;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 36px;
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.05rem;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.35);
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px 0 rgba(37, 99, 235, 0.45);
+            background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+        }
+
+        .hero-cta::after {
+            content: '→';
+            transition: transform 0.3s ease;
+        }
+
+        .hero-cta:hover::after {
+            transform: translateX(4px);
+        }
+
+        @media (max-width: 900px) {
+            .hero-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 48px;
+            }
+
+            .hero-name {
+                font-size: 2.75rem;
+            }
+
+            .hero-title {
+                font-size: 1.2rem;
+            }
+
+            .hero-statement {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-image {
+                width: 260px;
+                height: 260px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-section {
+                padding: 48px 20px;
+            }
+
+            .hero-name {
+                font-size: 2.1rem;
+            }
+
+            .hero-title {
+                font-size: 1.05rem;
+            }
+
+            .hero-statement {
+                font-size: 1rem;
+            }
+
+            .hero-image {
+                width: 200px;
+                height: 200px;
+            }
+
+            .hero-cta {
+                padding: 14px 28px;
+                font-size: 1rem;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero-designer {
+                font-family: 'Orbitron', sans-serif;
+                font-size: 1.2rem;
+                font-weight: 700;
+                color: var(--neon-magenta);
+                text-transform: uppercase;
+                margin-bottom: 0.5rem;
+                letter-spacing: 1px;
+                text-align: center;
+                }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-image-wrapper">
+                <img src="https://storage.googleapis.com/pj-becfr-portfolio-assets/unnamed.png" alt="Sahil Sachdeva - Professional Photo" class="hero-image">
+            </div>
+            <div class="hero-content">
+                <h3 class="hero-designer">Designed by Claude Opus 4.5</h3>
+                <h1 class="hero-name">Sahil Sachdeva</h1>
+                <p class="hero-title">Europe Based | Enterprise AI & Automation Architect | Cloud & Digital Transformation Specialist</p>
+                <p class="hero-location">Evere, Belgium</p>
+                <p class="hero-statement">Driving enterprise innovation through intelligent automation and cloud-native solutions. I architect scalable AI systems that transform complex business challenges into streamlined, future-ready digital ecosystems.</p>
+                <a href="mailto:buildwithsahilx@gmail.com" class="hero-cta">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Summary</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #0a0a0f;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --gradient-start: #1e1b4b;
+            --gradient-end: #0f172a;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            min-height: 100vh;
+        }
+
+        .summary-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        .section-header {
+            margin-bottom: 48px;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent-blue);
+            margin-bottom: 16px;
+        }
+
+        .section-label::before {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+
+        .summary-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .summary-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 48px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .summary-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple), var(--accent-blue));
+            background-size: 200% 100%;
+        }
+
+        .role-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(139, 92, 246, 0.15));
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--accent-purple);
+            margin-bottom: 28px;
+            letter-spacing: 0.5px;
+        }
+
+        .summary-text {
+            font-size: 1.25rem;
+            line-height: 1.9;
+            color: var(--text-secondary);
+            max-width: 900px;
+        }
+
+        .highlight-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 24px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        .expertise-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 36px;
+        }
+
+        .expertise-tag {
+            padding: 10px 18px;
+            background: rgba(59, 130, 246, 0.08);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 8px;
+            font-size: 0.875rem;
+            color: var(--text-primary);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .expertise-tag:hover {
+            background: rgba(59, 130, 246, 0.15);
+            border-color: rgba(59, 130, 246, 0.4);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .summary-section {
+                padding: 60px 24px;
+            }
+
+            .summary-card {
+                padding: 32px 24px;
+            }
+
+            .summary-text {
+                font-size: 1.1rem;
+                line-height: 1.8;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .highlight-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .summary-section {
+                padding: 48px 16px;
+            }
+
+            .summary-card {
+                padding: 28px 20px;
+            }
+
+            .highlight-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .expertise-tags {
+                gap: 8px;
+            }
+
+            .expertise-tag {
+                padding: 8px 14px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="summary-section">
+        <header class="section-header">
+            <div class="section-label">Overview</div>
+            <h1 class="section-title">Professional Summary</h1>
+        </header>
+
+        <div class="summary-container">
+            <article class="summary-card">
+                <span class="role-badge">AI and Automation Architect</span>
+                
+                <p class="summary-text">
+                    AI and Automation Architect with 15 years of experience leading enterprise digital transformation initiatives across cloud, DevOps, and intelligent automation ecosystems. Specialized in designing LLM-powered applications, agentic AI systems, infrastructure automation, and API-driven enterprise integrations. Proven track record in architecting scalable cloud-native platforms on GCP, Azure, and AWS, enabling operational efficiency, governance, and business agility.
+                </p>
+
+                <div class="highlight-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Cloud Platforms</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">AI</div>
+                        <div class="stat-label">Specialization</div>
+                    </div>
+                </div>
+
+                <div class="expertise-tags">
+                    <span class="expertise-tag">LLM-Powered Applications</span>
+                    <span class="expertise-tag">Agentic AI Systems</span>
+                    <span class="expertise-tag">Infrastructure Automation</span>
+                    <span class="expertise-tag">API-Driven Integrations</span>
+                    <span class="expertise-tag">Cloud-Native Platforms</span>
+                    <span class="expertise-tag">GCP</span>
+                    <span class="expertise-tag">Azure</span>
+                    <span class="expertise-tag">AWS</span>
+                    <span class="expertise-tag">DevOps</span>
+                    <span class="expertise-tag">Digital Transformation</span>
+                </div>
+            </article>
+        </div>
+    </section>
+</body>
+</html>
+```<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Architecture Focus</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     :root {
-        --neon-cyan: #00ffff;
-        --neon-magenta: #ff00ff;
-        --deep-black: #0a0a0f;
-        --off-white: #f0f0f5;
-        --glow-cyan: 0 0 20px rgba(0, 255, 255, 0.7);
-        --font-display: 'Orbitron', sans-serif;
+      --primary: #0a0a0a;
+      --secondary: #1a1a2e;
+      --accent: #4f46e5;
+      --accent-light: #818cf8;
+      --text-primary: #ffffff;
+      --text-secondary: #ffffff;
+      --card-bg: rgba(255, 255, 255, 0.03);
+      --border-color: rgba(255, 255, 255, 0.08);
+      --gradient-1: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+      --gradient-2: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+      --gradient-3: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      --gradient-4: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+      --gradient-5: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+      --gradient-6: linear-gradient(135deg, #14b8a6 0%, #0ea5e9 100%);
+      --gradient-7: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-        font-family: var(--font-display);
-        background: var(--deep-black);
-        color: var(--off-white);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        text-align: center;
-        overflow: hidden;
+    .architecture-section {
+      background: var(--primary);
+      min-height: 100vh;
+      padding: 100px 5%;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      color: var(--text-primary);
+      position: relative;
+      overflow: hidden;
     }
 
-    .message {
-        font-size: clamp(2rem, 5vw, 4rem);
-        background: linear-gradient(135deg, var(--neon-cyan), var(--neon-magenta));
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        text-shadow: var(--glow-cyan);
-        animation: pulse 2s infinite;
-        margin-bottom: 2rem;
+    .architecture-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(79, 70, 229, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse 60% 40% at 100% 50%, rgba(124, 58, 237, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse 60% 40% at 0% 80%, rgba(6, 182, 212, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .section-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      margin-bottom: 20px;
+    }
+
+    .section-label::before,
+    .section-label::after {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    .section-title {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-subtitle {
+      font-size: 1.125rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 32px;
+    }
+
+    .expertise-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 36px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .expertise-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .expertise-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+
+    .expertise-card:hover::before {
+      opacity: 1;
+    }
+
+    .expertise-card:nth-child(1)::before { background: var(--gradient-1); }
+    .expertise-card:nth-child(2)::before { background: var(--gradient-2); }
+    .expertise-card:nth-child(3)::before { background: var(--gradient-3); }
+    .expertise-card:nth-child(4)::before { background: var(--gradient-4); }
+    .expertise-card:nth-child(5)::before { background: var(--gradient-5); }
+    .expertise-card:nth-child(6)::before { background: var(--gradient-6); }
+    .expertise-card:nth-child(7)::before { background: var(--gradient-7); }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .card-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .expertise-card:nth-child(1) .card-icon { background: var(--gradient-1); }
+    .expertise-card:nth-child(2) .card-icon { background: var(--gradient-2); }
+    .expertise-card:nth-child(3) .card-icon { background: var(--gradient-3); }
+    .expertise-card:nth-child(4) .card-icon { background: var(--gradient-4); }
+    .expertise-card:nth-child(5) .card-icon { background: var(--gradient-5); }
+    .expertise-card:nth-child(6) .card-icon { background: var(--gradient-6); }
+    .expertise-card:nth-child(7) .card-icon { background: var(--gradient-7); }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.3;
+    }
+
+    .skills-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 14px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      transition: all 0.3s ease;
+    }
+
+    .skill-tag:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.15);
+      color: var(--text-primary);
+      transform: translateY(-2px);
+    }
+
+    .expertise-card:nth-child(1) .skill-tag:hover { border-color: rgba(79, 70, 229, 0.5); }
+    .expertise-card:nth-child(2) .skill-tag:hover { border-color: rgba(6, 182, 212, 0.5); }
+    .expertise-card:nth-child(3) .skill-tag:hover { border-color: rgba(16, 185, 129, 0.5); }
+    .expertise-card:nth-child(4) .skill-tag:hover { border-color: rgba(245, 158, 11, 0.5); }
+    .expertise-card:nth-child(5) .skill-tag:hover { border-color: rgba(236, 72, 153, 0.5); }
+    .expertise-card:nth-child(6) .skill-tag:hover { border-color: rgba(20, 184, 166, 0.5); }
+    .expertise-card:nth-child(7) .skill-tag:hover { border-color: rgba(99, 102, 241, 0.5); }
+
+    .skill-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 24px;
+      height: 24px;
+      padding: 0 8px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-left: auto;
+    }
+
+    @media (max-width: 900px) {
+      .expertise-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .architecture-section {
+        padding: 60px 5%;
+      }
+      
+      .section-header {
+        margin-bottom: 50px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .expertise-card {
+        padding: 24px;
+      }
+      
+      .card-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 1.25rem;
+      }
+      
+      .card-title {
+        font-size: 1.125rem;
+      }
+      
+      .skill-tag {
+        padding: 6px 12px;
+        font-size: 0.8125rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="architecture-section">
+    <div class="section-container">
+      <header class="section-header">
+        <span class="section-label">Technical Expertise</span>
+        <h2 class="section-title">Architecture Focus</h2>
+        <p class="section-subtitle">Comprehensive technical capabilities spanning AI transformation, cloud infrastructure, and enterprise-scale system design.</p>
+      </header>
+
+      <div class="expertise-grid">
+        <article class="expertise-card">
+          <div class="card-header">
+            <div class="card-icon">🧠</div>
+            <h3 class="card-title">AI Transformation</h3>
+            <span class="skill-count">11</span>
+          </div>
+          <ul class="skills-list">
+            <li class="skill-tag">Enterprise LLM Architecture</li>
+            <li class="skill-tag">Agentic AI Systems</li>
+            <li class="skill-tag">Retrieval-Augmented Generation (RAG)</li>
+            <li class="skill-tag">LLM Model Orchestration</li>
+            <li class="skill-tag">AI Governance & Deployment Strategies</li>
+            <li class="skill-tag">LangChain & LangGraph Frameworks</li>
+            <li class="skill-tag">Self-Hosted & Secure AI Implementations</li>
+            <li class="skill-tag">OpenAI & Azure OpenAI SDK</li>
+            <li class="skill-tag">Vertex AI & Google ADK</li>
+            <li class="skill-tag">Ollama & HuggingFace Ecosystems</li>
+            <li class="skill-tag">n8n Workflow Orchestration</li>
+          </ul>
+        </article>
+
+        <article class="expertise-card">
+          <div class="card-header">
+            <div class="card-icon">☁️</div>
+            <h3 class="card-title">Cloud Architecture</h3>
+            <span class="skill-count">6</span>
+          </div>
+          <ul class="skills-list">
+            <li class="skill-tag">Google Cloud Platform (GCP)</li>
+            <li class="skill-tag">Microsoft Azure</li>
+            <li class="skill-tag">Amazon Web Services (AWS)</li>
+            <li class="skill-tag">Cloud-Native Architecture Design</li>
+            <li class="skill-tag">Serverless Architecture (Cloud Run, AWS Lambda, S3)</li>
+            <li class="skill-tag">Multi-Environment Infrastructure Strategy</li>
+          </ul>
+        </article>
+
+        <article class="expertise-card">
+          <div class="card-header">
+            <div class="card-icon">⚙️</div>
+            <h3 class="card-title">DevOps & Platform Engineering</h3>
+            <span class="skill-count">6</span>
+          </div>
+          <ul class="skills-list">
+            <li class="skill-tag">Infrastructure as Code (Terraform)</li>
+            <li class="skill-tag">Configuration Management (Red Hat Ansible)</li>
+            <li class="skill-tag">GitLab CI/CD Pipeline Architecture</li>
+            <li class="skill-tag">CI/CD Template Engineering</li>
+            <li class="skill-tag">Automated Environment Provisioning</li>
+            <li class="skill-tag">Cloud Resource Governance</li>
+          </ul>
+        </article>
+
+        <article class="expertise-card">
+          <div class="card-header">
+            <div class="card-icon">🤖</div>
+            <h3 class="card-title">Enterprise Automation</h3>
+            <span class="skill-count">5</span>
+          </div>
+          <ul class="skills-list">
+            <li class="skill-tag">Robotic Process Automation (Automation Anywhere A360, UiPath)</li>
+            <li class="skill-tag">Microsoft Power Automate</li>
+            <li class="skill-tag">Hybrid Automation (RPA + API Integrations)</li>
+            <li class="skill-tag">Enterprise Workflow Modernization</li>
+            <li class="skill-tag">Business Process Re-engineering</li>
+          </ul>
+        </article>
+
+        <article class="expertise-card">
+          <div class="card-header">
+            <div class="card-icon">🔗</div>
+            <h3 class="card-title">Enterprise Integrations</h3>
+            <span class="skill-count">6</span>
+          </div>
+          <ul class="skills-list">
+            <li class="skill-tag">REST API Architecture</li>
+            <li class="skill-tag">Microsoft Graph API</li>
+            <li class="skill-tag">ServiceNow Integration</li>
+            <li class="skill-tag">Azure AD & Identity Governance</li>
+            <li class="skill-tag">Active Directory & LDAP</li>
+            <li class="skill-tag">SAP & Enterprise System Integration</li>
+          </ul>
+        </article>
+
+        <article class="expertise-card">
+          <div class="card-header">
+            <div class="card-icon">💻</div>
+            <h3 class="card-title">Programming & Scripting</h3>
+            <span class="skill-count">4</span>
+          </div>
+          <ul class="skills-list">
+            <li class="skill-tag">Python</li>
+            <li class="skill-tag">PowerShell</li>
+            <li class="skill-tag">Shell Scripting</li>
+            <li class="skill-tag">VBScript</li>
+          </ul>
+        </article>
+
+        <article class="expertise-card">
+          <div class="card-header">
+            <div class="card-icon">🗄️</div>
+            <h3 class="card-title">Data & Storage</h3>
+            <span class="skill-count">5</span>
+          </div>
+          <ul class="skills-list">
+            <li class="skill-tag">PostgreSQL</li>
+            <li class="skill-tag">Redis</li>
+            <li class="skill-tag">AWS RDS</li>
+            <li class="skill-tag">ChromaDB</li>
+            <li class="skill-tag">FAISS Vector Stores</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+</body>
+</html><section id="leadership-strengths">
+  <style>
+    #leadership-strengths {
+      padding: 100px 5%;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    #leadership-strengths .section-header {
+      text-align: center;
+      margin-bottom: 70px;
+    }
+
+    #leadership-strengths .section-label {
+      font-size: 0.85rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #6366f1;
+      font-weight: 600;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    #leadership-strengths .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    #leadership-strengths .section-title span {
+      background: linear-gradient(90deg, #6366f1, #a855f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    #leadership-strengths .strengths-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    #leadership-strengths .strength-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 40px 32px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    #leadership-strengths .strength-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, #6366f1, #a855f7);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    #leadership-strengths .strength-card:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(99, 102, 241, 0.3);
+      transform: translateY(-8px);
+    }
+
+    #leadership-strengths .strength-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    #leadership-strengths .strength-icon {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(168, 85, 247, 0.2));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    #leadership-strengths .strength-icon svg {
+      width: 28px;
+      height: 28px;
+      stroke: #a855f7;
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    #leadership-strengths .strength-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    #leadership-strengths .strength-number {
+      position: absolute;
+      bottom: 20px;
+      right: 24px;
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: rgba(255, 255, 255, 0.03);
+      line-height: 1;
+    }
+
+    @media (max-width: 992px) {
+      #leadership-strengths .strengths-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      #leadership-strengths {
+        padding: 70px 6%;
+      }
+
+      #leadership-strengths .strengths-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      #leadership-strengths .strength-card {
+        padding: 32px 24px;
+      }
+
+      #leadership-strengths .section-header {
+        margin-bottom: 50px;
+      }
+    }
+  </style>
+
+  <div class="section-header">
+    <span class="section-label">Core Competencies</span>
+    <h2 class="section-title">Leadership & <span>Strengths</span></h2>
+  </div>
+
+  <div class="strengths-grid">
+    <div class="strength-card">
+      <div class="strength-icon">
+        <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      </div>
+      <h3 class="strength-title">Digital Transformation Strategy</h3>
+      <span class="strength-number">01</span>
+    </div>
+
+    <div class="strength-card">
+      <div class="strength-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </div>
+      <h3 class="strength-title">Enterprise Solution Architecture</h3>
+      <span class="strength-number">02</span>
+    </div>
+
+    <div class="strength-card">
+      <div class="strength-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <h3 class="strength-title">Cross-Functional Leadership</h3>
+      <span class="strength-number">03</span>
+    </div>
+
+    <div class="strength-card">
+      <div class="strength-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h3 class="strength-title">Governance & Compliance Oversight</h3>
+      <span class="strength-number">04</span>
+    </div>
+
+    <div class="strength-card">
+      <div class="strength-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg>
+      </div>
+      <h3 class="strength-title">Operational Excellence</h3>
+      <span class="strength-number">05</span>
+    </div>
+
+    <div class="strength-card">
+      <div class="strength-icon">
+        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      </div>
+      <h3 class="strength-title">Mentorship & Capability Building</h3>
+      <span class="strength-number">06</span>
+    </div>
+  </div>
+</section><section id="certifications" style="padding: 80px 0; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); min-height: 100vh; display: flex; align-items: center;">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .certifications-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+    }
+
+    .certifications-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .certifications-label {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #60a5fa;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .certifications-title {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 700;
+      color: #f8fafc;
+      line-height: 1.2;
+    }
+
+    .certifications-subtitle {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      font-size: 18px;
+      color: #94a3b8;
+      margin-top: 16px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .certifications-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .certification-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .certification-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .certification-card:hover {
+      transform: translateY(-8px);
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(96, 165, 250, 0.3);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+
+    .certification-card:hover::before {
+      opacity: 1;
+    }
+
+    .certification-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      font-size: 28px;
+      position: relative;
+    }
+
+    .certification-icon::after {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(139, 92, 246, 0.3));
+      z-index: -1;
+    }
+
+    .cert-google { background: linear-gradient(135deg, #4285f4, #34a853); }
+    .cert-azure { background: linear-gradient(135deg, #0078d4, #00bcf2); }
+    .cert-redhat { background: linear-gradient(135deg, #ee0000, #cc0000); }
+    .cert-power { background: linear-gradient(135deg, #742774, #0066ff); }
+    .cert-aa { background: linear-gradient(135deg, #ff6b35, #f7931e); }
+    .cert-uipath { background: linear-gradient(135deg, #fa4616, #ff6b35); }
+
+    .certification-name {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: #f1f5f9;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .certification-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.2);
+      border-radius: 20px;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      color: #4ade80;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      background: #4ade80;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
     }
 
     @keyframes pulse {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0.8; }
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
     }
 
-    .back-button {
-        font-family: var(--font-display);
-        font-size: 1.2rem;
-        padding: 0.8rem 2rem;
-        border: 2px solid var(--neon-cyan);
-        border-radius: 50px;
-        background: transparent;
-        color: var(--off-white);
-        text-decoration: none;
-        transition: all 0.3s ease;
+    @media (max-width: 992px) {
+      .certifications-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
-    .back-button:hover {
-        background: var(--neon-cyan);
-        color: var(--deep-black);
-        box-shadow: var(--glow-cyan);
-        transform: translateY(-3px);
+    @media (max-width: 600px) {
+      .certifications-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .certification-card {
+        padding: 24px;
+      }
+
+      .certifications-header {
+        margin-bottom: 40px;
+      }
+    }
+  </style>
+
+  <div class="certifications-container">
+    <header class="certifications-header">
+      <span class="certifications-label">Credentials</span>
+      <h2 class="certifications-title">Professional Certifications</h2>
+      <p class="certifications-subtitle">Industry-recognized credentials validating expertise across cloud platforms and automation technologies</p>
+    </header>
+
+    <div class="certifications-grid">
+      <article class="certification-card">
+        <div class="certification-icon cert-google">☁️</div>
+        <h3 class="certification-name">Google Cloud Associate Engineer</h3>
+        <span class="certification-badge"><span class="badge-dot"></span>Verified</span>
+      </article>
+
+      <article class="certification-card">
+        <div class="certification-icon cert-azure">⚡</div>
+        <h3 class="certification-name">Microsoft Azure AZ-900</h3>
+        <span class="certification-badge"><span class="badge-dot"></span>Verified</span>
+      </article>
+
+      <article class="certification-card">
+        <div class="certification-icon cert-redhat">🎩</div>
+        <h3 class="certification-name">Red Hat Specialist in Ansible Automation</h3>
+        <span class="certification-badge"><span class="badge-dot"></span>Verified</span>
+      </article>
+
+      <article class="certification-card">
+        <div class="certification-icon cert-power">⚙️</div>
+        <h3 class="certification-name">Microsoft Power Automate PL-900</h3>
+        <span class="certification-badge"><span class="badge-dot"></span>Verified</span>
+      </article>
+
+      <article class="certification-card">
+        <div class="certification-icon cert-aa">🤖</div>
+        <h3 class="certification-name">Automation Anywhere A360 Master & Advanced</h3>
+        <span class="certification-badge"><span class="badge-dot"></span>Verified</span>
+      </article>
+
+      <article class="certification-card">
+        <div class="certification-icon cert-uipath">🔧</div>
+        <h3 class="certification-name">UiPath RPA Certification</h3>
+        <span class="certification-badge"><span class="badge-dot"></span>Verified</span>
+      </article>
+    </div>
+  </div>
+</section><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Experience</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-</style>
+    :root {
+      --primary: #0a0a0a;
+      --secondary: #1a1a2e;
+      --accent: #4f46e5;
+      --accent-light: #6366f1;
+      --text-primary: #ffffff;
+      --text-secondary: #a1a1aa;
+      --text-muted: #71717a;
+      --border: #27272a;
+      --card-bg: #18181b;
+      --gradient-start: #4f46e5;
+      --gradient-end: #7c3aed;
+    }
+
+    .experience-section {
+      background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%);
+      padding: 100px 24px;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    }
+
+    .experience-container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      margin-bottom: 16px;
+      padding: 8px 16px;
+      background: rgba(79, 70, 229, 0.1);
+      border-radius: 24px;
+      border: 1px solid rgba(79, 70, 229, 0.2);
+    }
+
+    .section-title {
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      font-size: 18px;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 40px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--accent) 0%, var(--gradient-end) 50%, transparent 100%);
+    }
+
+    .experience-card {
+      position: relative;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 32px;
+      transition: all 0.3s ease;
+    }
+
+    .experience-card:hover {
+      transform: translateX(8px);
+      border-color: var(--accent);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(79, 70, 229, 0.1);
+    }
+
+    .experience-card::before {
+      content: '';
+      position: absolute;
+      left: -40px;
+      top: 36px;
+      width: 14px;
+      height: 14px;
+      background: var(--accent);
+      border-radius: 50%;
+      border: 3px solid var(--primary);
+      box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.2);
+    }
+
+    .card-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .role-info {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .role-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .organization {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--accent-light);
+      margin-bottom: 4px;
+    }
+
+    .location {
+      font-size: 14px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .location::before {
+      content: '📍';
+      font-size: 12px;
+    }
+
+    .duration-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      background: rgba(79, 70, 229, 0.1);
+      border: 1px solid rgba(79, 70, 229, 0.2);
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent-light);
+      white-space: nowrap;
+    }
+
+    .duration-badge::before {
+      content: '⏱';
+      font-size: 14px;
+    }
+
+    .contributions-title {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contributions-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .contribution-item {
+      position: relative;
+      padding-left: 24px;
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+    }
+
+    .contribution-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 8px;
+      height: 8px;
+      background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+      border-radius: 2px;
+      transform: rotate(45deg);
+    }
+
+    .contribution-item:hover {
+      color: var(--text-primary);
+    }
+
+    .experience-card:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 768px) {
+      .experience-section {
+        padding: 60px 16px;
+      }
+
+      .section-header {
+        margin-bottom: 50px;
+      }
+
+      .timeline {
+        padding-left: 24px;
+      }
+
+      .timeline::before {
+        left: 4px;
+      }
+
+      .experience-card {
+        padding: 24px 20px;
+      }
+
+      .experience-card::before {
+        left: -24px;
+        width: 10px;
+        height: 10px;
+      }
+
+      .card-header {
+        flex-direction: column;
+      }
+
+      .duration-badge {
+        align-self: flex-start;
+      }
+
+      .role-title {
+        font-size: 19px;
+      }
+
+      .contribution-item {
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .experience-section {
+        padding: 48px 12px;
+      }
+
+      .experience-card {
+        padding: 20px 16px;
+        border-radius: 12px;
+      }
+
+      .section-subtitle {
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="message">
-        Countdown to Chaos: 03 February 2026 — Don’t Blink!<br>
-        <span style="display:block; 
-                     margin-top:1rem; 
-                     font-size:1.5em; 
-                     color:#ff7300; 
-                     text-shadow: 0 0 5px #ff7300, 0 0 10px #ff7300;">
-            Claude Opus 4.5 Enters the Arena
-        </span>
+  <section class="experience-section">
+    <div class="experience-container">
+      <header class="section-header">
+        <span class="section-label">Career Journey</span>
+        <h2 class="section-title">Professional Experience</h2>
+        <p class="section-subtitle">Over a decade of driving enterprise automation, AI innovation, and digital transformation across global organizations.</p>
+      </header>
+
+      <div class="timeline">
+        <article class="experience-card">
+          <div class="card-header">
+            <div class="role-info">
+              <h3 class="role-title">Automation & AI Architect</h3>
+              <p class="organization">RSS - Carrefour</p>
+              <p class="location">Belgium</p>
+            </div>
+            <span class="duration-badge">07/2023 - 12/2025</span>
+          </div>
+          <h4 class="contributions-title">Key Contributions</h4>
+          <ul class="contributions-list">
+            <li class="contribution-item">Architected and deployed secure LLM-powered enterprise applications using LangChain, HuggingFace, and RAG frameworks for confidential document intelligence.</li>
+            <li class="contribution-item">Designed self-hosted AI knowledge systems leveraging Ollama, ChromaDB, and GGUF models (LLaMA 3, Mistral) enabling offline AI capabilities.</li>
+            <li class="contribution-item">Engineered GitLab CI/CD-driven cloud infrastructure pipelines for automated GCP provisioning.</li>
+            <li class="contribution-item">Developed modular Terraform architecture supporting multi-environment deployments.</li>
+            <li class="contribution-item">Integrated Terraform and Ansible to automate full infrastructure lifecycle management.</li>
+            <li class="contribution-item">Delivered custom Python-based automation frameworks for enterprise system integration.</li>
+          </ul>
+        </article>
+
+        <article class="experience-card">
+          <div class="card-header">
+            <div class="role-info">
+              <h3 class="role-title">Automation Consultant</h3>
+              <p class="organization">Tata Consultancy Services</p>
+              <p class="location">India</p>
+            </div>
+            <span class="duration-badge">06/2022 - 07/2023</span>
+          </div>
+          <h4 class="contributions-title">Key Contributions</h4>
+          <ul class="contributions-list">
+            <li class="contribution-item">Led enterprise RPA transformation initiatives using Power Automate and Automation Anywhere.</li>
+            <li class="contribution-item">Architected Microsoft 365 and Azure AD automation solutions via Microsoft Graph APIs.</li>
+            <li class="contribution-item">Conducted automation opportunity assessments aligned with ROI-driven digital transformation roadmaps.</li>
+          </ul>
+        </article>
+
+        <article class="experience-card">
+          <div class="card-header">
+            <div class="role-info">
+              <h3 class="role-title">Automation Technical Lead & Solution Architect</h3>
+              <p class="organization">IBM India Private Limited</p>
+              <p class="location">India</p>
+            </div>
+            <span class="duration-badge">09/2010 - 05/2022</span>
+          </div>
+          <h4 class="contributions-title">Key Contributions</h4>
+          <ul class="contributions-list">
+            <li class="contribution-item">Designed enterprise automation platforms combining Ansible-based infrastructure automation with RPA-driven service orchestration.</li>
+            <li class="contribution-item">Architected Azure-based DevOps transformation programs leveraging Terraform, Ansible, and CI/CD pipelines.</li>
+            <li class="contribution-item">Built IAM automation systems for onboarding, offboarding, and compliance workflows.</li>
+            <li class="contribution-item">Directed security and audit governance initiatives including SOC1, SOX, and SSAE16 compliance.</li>
+            <li class="contribution-item">Developed enterprise dashboards for operational intelligence and audit transparency.</li>
+            <li class="contribution-item">Mentored and led cross-functional automation teams driving platform standardization.</li>
+          </ul>
+        </article>
+      </div>
     </div>
-    <a href="https://buildwithsahilx.com" class="back-button">Go Back</a>
+  </section>
 </body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recognitions</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    :root {
+      --primary: #0f172a;
+      --secondary: #1e293b;
+      --accent: #3b82f6;
+      --accent-light: #60a5fa;
+      --gold: #f59e0b;
+      --gold-light: #fbbf24;
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --bg-card: rgba(30, 41, 59, 0.6);
+      --border: rgba(148, 163, 184, 0.1);
+    }
 
+    .recognitions-section {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      padding: 100px 24px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    }
 
-</html>
+    .recognitions-container {
+      max-width: 1100px;
+      width: 100%;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .section-label::before,
+    .section-label::after {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .section-title {
+      font-size: clamp(36px, 5vw, 52px);
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -1px;
+      line-height: 1.2;
+    }
+
+    .title-highlight {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .recognitions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 28px;
+    }
+
+    .recognition-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter: blur(10px);
+    }
+
+    .recognition-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--gold);
+      box-shadow: 0 25px 50px -12px rgba(245, 158, 11, 0.15);
+    }
+
+    .recognition-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .recognition-card:hover::before {
+      opacity: 1;
+    }
+
+    .card-icon-wrapper {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(251, 191, 36, 0.1) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .card-icon {
+      width: 32px;
+      height: 32px;
+      color: var(--gold);
+    }
+
+    .recognition-card:first-child .card-icon-wrapper {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.25) 0%, rgba(251, 191, 36, 0.15) 100%);
+    }
+
+    .recognition-card:first-child .card-icon-wrapper::after {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 18px;
+      border: 2px solid var(--gold);
+      opacity: 0.3;
+    }
+
+    .recognition-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .recognition-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 16px;
+    }
+
+    .recognition-card:nth-child(2) .recognition-badge,
+    .recognition-card:nth-child(3) .recognition-badge {
+      background: rgba(59, 130, 246, 0.12);
+      border-color: rgba(59, 130, 246, 0.25);
+      color: var(--accent-light);
+    }
+
+    .star-decoration {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      opacity: 0.1;
+      transition: opacity 0.4s ease;
+    }
+
+    .recognition-card:hover .star-decoration {
+      opacity: 0.2;
+    }
+
+    @media (max-width: 768px) {
+      .recognitions-section {
+        padding: 80px 20px;
+      }
+
+      .section-header {
+        margin-bottom: 48px;
+      }
+
+      .recognitions-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .recognition-card {
+        padding: 28px;
+      }
+
+      .card-icon-wrapper {
+        width: 56px;
+        height: 56px;
+      }
+
+      .card-icon {
+        width: 28px;
+        height: 28px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .section-label::before,
+      .section-label::after {
+        width: 16px;
+      }
+
+      .recognition-title {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="recognitions-section">
+    <div class="recognitions-container">
+      <header class="section-header">
+        <p class="section-label">Excellence</p>
+        <h2 class="section-title">Professional <span class="title-highlight">Recognitions</span></h2>
+      </header>
+
+      <div class="recognitions-grid">
+        <article class="recognition-card">
+          <svg class="star-decoration" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="rgba(245,158,11,0.3)" stroke="rgba(245,158,11,0.5)"/>
+          </svg>
+          <div class="card-icon-wrapper">
+            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="6"/>
+              <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+            </svg>
+          </div>
+          <h3 class="recognition-title">IBM STAR Award</h3>
+          <span class="recognition-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+            Awarded Twice
+          </span>
+        </article>
+
+        <article class="recognition-card">
+          <svg class="star-decoration" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="rgba(59,130,246,0.2)" stroke="rgba(59,130,246,0.4)"/>
+          </svg>
+          <div class="card-icon-wrapper">
+            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3v18"/>
+              <rect x="4" y="8" width="16" height="12" rx="2"/>
+              <path d="M8 8V6a4 4 0 0 1 8 0v2"/>
+            </svg>
+          </div>
+          <h3 class="recognition-title">Enterprise-wide reusable automation modules adopted across multiple teams</h3>
+          <span class="recognition-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+              <path d="m9 12 2 2 4-4"/>
+            </svg>
+            Enterprise Impact
+          </span>
+        </article>
+
+        <article class="recognition-card">
+          <svg class="star-decoration" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="rgba(59,130,246,0.2)" stroke="rgba(59,130,246,0.4)"/>
+          </svg>
+          <div class="card-icon-wrapper">
+            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"/>
+              <polyline points="8 6 2 12 8 18"/>
+              <line x1="12" y1="2" x2="12" y2="22"/>
+            </svg>
+          </div>
+          <h3 class="recognition-title">Developed low-code Python automation platforms for business workflow optimization</h3>
+          <span class="recognition-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+            Innovation
+          </span>
+        </article>
+      </div>
+    </div>
+  </section>
+</body>
+</html><section id="education" style="padding: 80px 5%; background: linear-gradient(135deg, #fafbfc 0%, #f0f2f5 100%); font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;">
+  <style>
+    .education-container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .education-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    
+    .education-header h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin: 0 0 12px 0;
+      letter-spacing: -0.5px;
+    }
+    
+    .education-header .divider {
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      margin: 0 auto;
+      border-radius: 2px;
+    }
+    
+    .education-timeline {
+      position: relative;
+      padding-left: 40px;
+    }
+    
+    .education-timeline::before {
+      content: '';
+      position: absolute;
+      left: 8px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, #667eea, #764ba2);
+    }
+    
+    .education-item {
+      position: relative;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 32px 36px;
+      margin-bottom: 32px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(102, 126, 234, 0.08);
+    }
+    
+    .education-item:last-child {
+      margin-bottom: 0;
+    }
+    
+    .education-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(102, 126, 234, 0.15);
+    }
+    
+    .education-item::before {
+      content: '';
+      position: absolute;
+      left: -36px;
+      top: 36px;
+      width: 16px;
+      height: 16px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border-radius: 50%;
+      border: 3px solid #ffffff;
+      box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4);
+    }
+    
+    .education-year {
+      display: inline-block;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #ffffff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+    
+    .education-degree {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin: 0 0 12px 0;
+      line-height: 1.4;
+    }
+    
+    .education-institution {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.05rem;
+      color: #4a5568;
+      margin: 0;
+    }
+    
+    .education-institution svg {
+      width: 18px;
+      height: 18px;
+      fill: #667eea;
+      flex-shrink: 0;
+    }
+    
+    .education-location {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      color: #718096;
+      margin-top: 10px;
+    }
+    
+    .education-location svg {
+      width: 14px;
+      height: 14px;
+      fill: #a0aec0;
+    }
+    
+    @media (max-width: 768px) {
+      #education {
+        padding: 60px 6%;
+      }
+      
+      .education-header h2 {
+        font-size: 2rem;
+      }
+      
+      .education-timeline {
+        padding-left: 30px;
+      }
+      
+      .education-timeline::before {
+        left: 6px;
+      }
+      
+      .education-item {
+        padding: 24px 20px;
+      }
+      
+      .education-item::before {
+        left: -28px;
+        width: 12px;
+        height: 12px;
+      }
+      
+      .education-degree {
+        font-size: 1.15rem;
+      }
+      
+      .education-institution {
+        font-size: 0.95rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .education-header h2 {
+        font-size: 1.75rem;
+      }
+      
+      .education-item {
+        padding: 20px 16px;
+      }
+      
+      .education-degree {
+        font-size: 1.05rem;
+      }
+    }
+  </style>
+  
+  <div class="education-container">
+    <header class="education-header">
+      <h2>Education</h2>
+      <div class="divider"></div>
+    </header>
+    
+    <div class="education-timeline">
+      <article class="education-item">
+        <span class="education-year">2014</span>
+        <h3 class="education-degree">Post Graduate Diploma in Business Management (IT Systems)</h3>
+        <p class="education-institution">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
+          Institute of Management and Technology
+        </p>
+        <div class="education-location">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          India
+        </div>
+      </article>
+      
+      <article class="education-item">
+        <span class="education-year">2010</span>
+        <h3 class="education-degree">Bachelor of Business Administration</h3>
+        <p class="education-institution">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
+          IP University
+        </p>
+        <div class="education-location">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          India
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
